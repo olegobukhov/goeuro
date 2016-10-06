@@ -38,7 +38,7 @@ public class CsvFileExporterService implements FileExporterService<Iterable<Loca
         }
         File file = prepareFile();
         log.debug("Start exporting csv...");
-        try (CSVWriter writer = new CSVWriter(new FileWriter(file), ',')) {
+        try (CSVWriter writer = new CSVWriter(new FileWriter(file), ';')) {
             String[] chunks = new String[]{"id_", "name", "type", "latitude", "longitude"};
             writer.writeNext(chunks);
             for (Location location : locations) {
